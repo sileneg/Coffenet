@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+    <link rel="shortcut icon" href="images/logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="CSS/styles_registro.css">
+
+    <script>
+        function clearForm() {
+            document.getElementById("recovery-form").reset();
+        }
+
+        // Clear form on page load
+        window.onload = function() {
+            clearForm();
+        }
+    </script>
+
+    <style>
+        .form-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 6rem;
+        }
+        .form-image {
+            flex: 1;
+            max-width: 40%;
+            text-align: center;
+            margin-right: 1.5rem;
+        }
+        .form-image img {
+            max-height: 24rem;
+            width: auto;
+            border: 0.2rem solid var(--color-secundario);
+            border-radius: 0.8rem;
+            box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.1);
+        }
+        .recovery-form {
+            flex: 1;
+            max-width: 25%;
+            background-color: var(--color-cuaternario);
+            border: 0.2rem solid var(--color-secundario);
+            margin-left: 8rem;
+            padding: 2rem;
+            border-radius: 0.8rem;
+            box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.1);
+        }
+        .recovery-form h2 {
+            text-align: center;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--color-primario);
+        }
+        .recovery-form label {
+            display: block;
+            margin-top: 1rem;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--color-primario);
+        }
+        .recovery-form input {
+            width: 100%;
+            padding: 0.5rem;
+            margin-top: 0.5rem;
+            border: 0.1rem solid var(--color-secundario);
+            border-radius: 0.4rem;
+        }
+        .recovery-form button {
+            background-color: var(--color-primario);
+            color: white;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-weight: bold;
+            font-size: 1.2rem;
+            border: none;
+            padding: 0.75rem;
+            margin-top: 1rem;
+            cursor: pointer;
+            border-radius: 0.4rem;
+            width: 106%;
+        }
+        .recovery-form button:hover {
+            background-color: var(--color-secundario);
+        }
+    </style>
+    
+</head>
+<body>
+    <header class="header">
+        <img class="imagen_logo" src="images/logo.jpg" alt="Icono empresa">
+        <h1 id="title">Papelería y más...</h1>
+        <nav class="nav">
+            <ul>
+                <li class="btnmenu"><a href="index.php">Inicio</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="form-container">
+            <div class="form-image">
+                <img src="images/logo.jpg" alt="Imagen descriptiva">
+            </div>
+            <form class="recovery-form" method="POST" action="PHP/solicitar_recuperacion.php" autocomplete="off">
+                <h2>Recuperar Contraseña</h2>
+                <label for="user_or_email">Nombre de Usuario o Correo Electrónico</label>
+                <input type="text" name="user_or_email" id="user_or_email" placeholder="Ingrese Usuario o Correo">
+                <button type="submit">Validar</button>
+            </form>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="footer-content" id="footer-content">
+            <div class="contact-info">
+                <p>Teléfono: +57 3103301067</p>
+                <p>Dirección: Carrera 5 N° 5-75 Fresno, Tolima</p>
+                <p>Email: coffeenet27@hotmail.com</p>
+            </div>
+            <div class="social-icons">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-instagram"></a>
+                <a href="#" class="fa fa-linkedin"></a>
+            </div>
+            <div class="location">
+                <a href="#" class="fa fa-map-marker"></a>
+            </div>
+            <div class="copyright">
+                &copy; 2024 CoffeNet. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

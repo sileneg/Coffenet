@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+    <link rel="shortcut icon" href="images/logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="CSS/styles_registro.css">
+    
+    <script>
+        function focusNextField(currentField, nextFieldId) {
+            if (currentField.value.length === currentField.maxLength) {
+                document.getElementById(nextFieldId).focus();
+            }
+        }
+
+        window.onload = function() {
+            document.getElementById("login-form").reset();
+            document.getElementById("username").value = "";
+            document.getElementById("password").value = "";
+        }
+    </script>
+
+</head>
+<body>
+    <style>
+        .form-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 6rem;
+        }
+        .form-image {
+            flex: 1;
+            max-width: 40%;
+            text-align: center;
+            margin-right: 1.5rem;
+        }
+        .form-image img {
+            max-height: 24rem;
+            width: auto;
+            border: 0.2rem solid var(--color-secundario);
+            border-radius: 0.8rem;
+            box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.1);
+        }
+        .login-form {
+            flex: 1;
+            max-width: 25%;
+            background-color: var(--color-cuaternario);
+            border: 0.2rem solid var(--color-secundario);
+            margin-left: 8rem;
+            padding: 2rem;
+            border-radius: 0.8rem;
+            box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.1);
+        }
+        .login-form h2 {
+            text-align: center;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--color-primario);
+        }
+        .login-form label {
+            display: block;
+            margin-top: 1rem;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--color-primario);
+        }
+        .login-form input {
+            width: 100%;
+            padding: 0.5rem;
+            margin-top: 0.5rem;
+            border: 0.1rem solid var(--color-secundario);
+            border-radius: 0.4rem;
+        }
+        .login-form button {
+            background-color: var(--color-primario);
+            color: white;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-weight: bold;
+            font-size: 1.2rem;
+            border: none;
+            padding: 0.75rem;
+            margin-top: 1rem;
+            cursor: pointer;
+            border-radius: 0.4rem;
+            width: 106%;
+        }
+        .login-form button:hover {
+            background-color: var(--color-secundario);
+        }
+        .login-form a {
+            display: block;
+            margin-top: 1rem;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-align: center;
+            color: var(--color-primario);
+            text-decoration: none;
+        }
+        .login-form a:hover {
+            text-decoration: none;
+            font-size: 1.25rem;
+        }
+        
+        #toggle-password {
+            font-size: 1.2rem;
+            color: var(--color-primario);
+        }
+        
+    </style>
+
+    <header class="header">
+        <img class="imagen_logo" src="images/logo.jpg" alt="Icono empresa">
+        <h1 id="title">Papelería y más...</h1>
+        <nav class="nav">
+            <ul>
+                <li class="btnmenu"><a href="index.php">Inicio</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="form-container">
+            <div class="form-image">
+                <img src="images/logo.jpg" alt="Imagen descriptiva">
+            </div>
+            <div class="login-form">
+                <h2>Inicio de Sesión</h2>
+                <form id="login-form" action="PHP/login.php" method="POST" autocomplete="off">
+                    <label for="username">Usuario</label>
+                    <input type="text" id="username" name="username" required autocomplete="off" maxlength="50" placeholder="Usuario">
+                    <label for="password">Contraseña</label>
+                    <div style="position: relative;">
+                        <input type="password" id="password" name="password" required autocomplete="new-password" maxlength="20" placeholder="Contraseña">
+                        <span id="toggle-password" style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); cursor: pointer;">
+                            👁️
+                        </span>
+                    </div>
+                    <button type="submit">Ingresar</button>
+                </form>
+                <a href="registro_usuarios.html">Registrarse</a>
+                <a href="recuperar_contrasena.html">Olvidé mi contraseña</a>
+            </div>
+        </div>  
+    </main>
+
+    <footer>
+        <div class="footer-content" id="footer-content">
+            <div class="contact-info">
+                <p>Teléfono: +57 3103301067</p>
+                <p>Dirección: Carrera 5 N° 5-75 Fresno, Tolima</p>
+                <p>Email: coffeenet27@hotmail.com</p>
+            </div>
+            <div class="social-icons">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-instagram"></a>
+                <a href="#" class="fa fa-linkedin"></a>
+            </div>
+            <div class="location">
+                <a href="#" class="fa fa-map-marker"></a>
+            </div>
+            <div class="copyright">
+                &copy; 2024 CoffeNet. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('toggle-password').addEventListener('click', function () {
+            var passwordField = document.getElementById('password');
+            var passwordFieldType = passwordField.getAttribute('type');
+        
+            if (passwordFieldType === 'password') {
+                passwordField.setAttribute('type', 'text');
+                this.textContent = '🙈'; // Cambia el ícono al de "ojo cerrado"
+            } else {
+                passwordField.setAttribute('type', 'password');
+                this.textContent = '👁️'; // Cambia el ícono al de "ojo abierto"
+            }
+        });
+    </script>
+
+</body>
+</html>

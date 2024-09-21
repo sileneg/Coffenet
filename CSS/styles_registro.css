@@ -1,0 +1,218 @@
+/* Colores base */
+:root {
+    --color-fondo: #f9f9f9;
+    --color-primario: #231709;
+    --color-secundario: #795C34;
+    --color-terciario: #65350f;
+    --color-cuaternario: #9A7B4f;
+    --color-quinto: #80471C;
+}
+
+
+body {
+    background-size: cover;
+    background-color: #e4d6c2;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    position: fixed; /* Asegura que el encabezado permanezca en su lugar mientras se desplaza */
+    top: 0; /* Posiciona el encabezado en la parte superior */
+    left: 0;
+    width: 100%; /* Ocupa todo el ancho disponible */
+    background: rgb(35,23,9);
+    background: linear-gradient(90deg, rgba(35,23,9,1) 23%, rgba(35,23,9,1) 100%);
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    z-index: 1000; /* Asegura que el encabezado esté por encima del slider */
+    flex-direction: row; /* Alinea los elementos en una fila */
+    justify-content: space-between; /* Espacia los elementos de manera uniforme */
+    box-sizing: border-box;
+}
+
+.imagen_logo{
+    width: 6rem; /* Ajustado de 80px a rem */
+    height: 6rem; /* Ajustado de 80px a rem */
+    display: flex;
+    align-items: center;
+    margin: -0.5rem;
+}
+
+#title {
+    font-size: 2rem; /* Ajustado de 36px a rem */
+    font-family: cursive;
+    font-weight: bold;
+    color: #9A7B4f;
+    padding: 1rem; /* Ajustado de 20px a rem */
+    display: flex;
+    align-items: center;
+}
+
+.nav {
+    width: auto;
+    height: 5rem; /* Ajustado de 80px a rem */
+    flex: 1; /* Permite que la navegación ocupe el espacio restante */
+    display: flex;
+    justify-content: flex-end; /* Alinea los enlaces de navegación a la derecha */
+}
+
+ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row; /* Alinea los elementos de navegación en una fila */
+}
+
+li {
+    background-color: hsla(47, 32%, 75%, 0.2);
+    display: flex;
+    align-items: center;
+    padding: 0.625rem; /* Ajustado de 10px a rem */
+    margin-left: 0.125rem; /* Ajustado de 2px a rem */
+    border-radius: 50px 15px 50px;
+}
+
+.btnmenu {
+    background-color: hsla(47, 32%, 75%, 0.2);
+    color: white;
+    padding: 0.625rem; /* Ajustado de 10px a rem */
+    text-decoration: none;
+}
+
+.btnmenu:hover {
+    background-color: #9A7B4f;
+    padding: 0.625rem; /* Ajustado de 10px a rem */
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem; /* Ajustado de 15px a rem */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #231709;
+    font-size: 1.25rem; /* Ajustado de 15px a rem */
+}
+
+main {
+    padding: 0;
+    margin-top: calc(2rem + 8rem); /* Ajusta el margen para que haya suficiente espacio para el slider */
+}
+
+/* Asegura que el contenedor de formulario e imagen se ubiquen lado a lado */
+.form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 6rem;
+}
+
+.form-image {
+    flex: 1;
+    max-width: 40%; /* Reducido el ancho máximo de la imagen */
+    text-align: center;
+    margin-right: 1.2rem; /* Espacio entre la imagen y el formulario */
+}
+
+.form-image img {
+    max-height: 24rem; /* Ajusta la altura máxima de la imagen */
+    width: auto; /* Mantiene la relación de aspecto */
+    border: 2px solid var(--color-secundario);
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.registration-form {
+    flex: 1;
+    max-width: 30%; /* Reducido el ancho máximo del formulario */
+    background-color: var(--color-cuaternario);
+    border: 2px solid var(--color-secundario);
+    margin-left: 8rem; /* Espacio entre la imagen y el formulario */
+    padding: 2rem; /* Reducido el padding */
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.registration-form h2 {
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 2rem; /* Reducido el tamaño del título */
+    font-weight: bold;
+    color: var(--color-primario);
+}
+
+.registration-form label {
+    display: block;
+    margin-top: 1rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.1rem; /* Reducido el tamaño del texto de los labels */
+    font-weight: bold;
+    color: var(--color-primario);
+}
+
+.registration-form input, 
+.registration-form select {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border: 1px solid var(--color-secundario);
+    border-radius: 4px;
+}
+
+.registration-form button {
+    background-color: var(--color-primario);
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border: none;
+    padding: 0.75rem; /* Reducido el padding del botón */
+    margin-top: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.registration-form button:hover {
+    background-color: var(--color-secundario);
+}
+
+.footer-content {
+    background-color: #231709;
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+}
+
+.footer-content p {
+    margin: 0.5rem 0;
+    font-size: 1.125rem; /* Tamaño de texto del pie de página */
+    font-weight: bold; /* Texto en negrita */
+}
+
+.footer-content .social-media {
+    margin: 1rem 0;
+}
+
+.footer-content .social-media a {
+    margin: 0 0.5rem;
+}
+
+.footer-content .social-media img {
+    width: 2rem;
+}
+
+.footer-content a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
+}
+

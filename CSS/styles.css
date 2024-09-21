@@ -1,0 +1,454 @@
+/* styles.css */
+body {
+    background-size: cover;
+    background-color: #e4d6c2;
+}
+
+.header {
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgb(35, 23, 9);
+    background: linear-gradient(90deg, rgba(35, 23, 9, 1) 23%, rgba(35, 23, 9, 1) 100%);
+    display: grid;
+    flex-direction: column; /* Cambiado a columna para organizar los divs en fila */
+    z-index: 1000;
+    grid-template-rows: auto auto; /* Dos filas: superior e inferior */
+    grid-template-columns: 1fr; /* Una columna */
+    box-sizing: border-box;
+    padding: 0; /* Sin padding */
+    z-index: 1000;
+}
+
+.header .top {
+    display: flex;
+    justify-content: space-between; /* Espacio entre los dos divs */
+    align-items: center; /* Alineación vertical central */
+    height: 7rem; /* Ajusta la altura del header según sea necesario */
+    padding: 0 1rem; /* Espacio horizontal para los divs */
+}
+
+.logo-title {
+    display: flex;
+    align-items: center;
+    padding: 1.4rem 1rem; /* Espacio horizontal */
+    width: 50%; /* Ocupa el 50% del ancho del header */
+}
+
+.imagen_logo {
+    width: 5rem; /* Ajusta el tamaño según sea necesario */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+#title {
+    font-size: 2rem;
+    font-family: cursive;
+    font-weight: bold;
+    color: #9A7B4f;
+    padding-left: 1rem; /* Espacio entre el logo y el título */
+}
+
+.user-info {
+    justify-content: flex-end;
+    padding: 0 1rem; /* Espacio horizontal */
+    text-align: right;
+    margin-top: -6rem;
+}
+
+.user-info span {
+    display: block;
+    margin-bottom: 0.5rem;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+}
+
+.user-info a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: hsla(47, 32%, 75%, 0.2);
+    color: #fff; /* Color del texto del botón */
+    text-decoration: none;
+    border-radius: 50px 15px 50px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1rem;
+}
+
+.user-info a:hover {
+    color: #f3dbc3; /* Color de fondo del botón al pasar el mouse */
+}
+
+.nav {
+    display: flex;
+    width: 100%;
+    background: rgb(35, 23, 9);
+    background: linear-gradient(90deg, rgba(35, 23, 9, 1) 23%, rgba(35, 23, 9, 1) 100%);
+    box-sizing: border-box;
+    grid-column: 1 / 2; /* Ocupa toda la columna */
+    padding: 1.3rem;
+    justify-content: space-between;
+}
+
+ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    width: 100%;
+    gap: 3.5rem;
+}
+
+li {
+    background-color: hsla(47, 32%, 75%, 0.2);
+    display: flex;
+    align-items: center;
+    padding: 0.625rem;
+    margin-left: 0.125rem;
+    border-radius: 50px 15px 50px;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #f3dbc3;
+    font-size: 1.25rem;
+}
+
+main {
+    padding: 0;
+    margin-top: 0.5rem; /* Ajusta el margen para que haya suficiente espacio para el slider */
+}
+
+/* Carrusel */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 380px; /* Ajusta la altura según tu preferencia */
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.carousel {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+    width: 100%; /* Asegura que el carrusel ocupe todo el ancho */
+}
+
+.carousel-slide {
+    flex: 0 0 100%;
+    min-width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    height: 100%;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill; /* Asegura que la imagen cubra todo el ancho y alto del carrusel */
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0.625rem;
+    border-radius: 0.3125rem;
+    max-width: 90%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.45em;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 2.1rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+}
+
+button.prev,
+button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    border: none;
+    padding: 1.25rem;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 1;
+    font-size: 2rem;
+}
+
+button.prev {
+    left: 1.5rem;
+}
+
+button.next {
+    right: 1.5rem;
+}
+
+button.prev:hover,
+button.next:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+@media (max-width: 600px) {
+    .carousel-caption {
+        font-size: 0.875rem;
+        padding: 0.3125rem;
+    }
+
+    button.prev,
+    button.next {
+        padding: 0.9375rem;
+    }
+}
+
+.page-title {
+    font-size: 3rem; /* Tamaño grande */
+    font-weight: bold; /* Negrita */
+    text-align: center; /* Centrarse */
+    margin-bottom: 2rem; /* Espacio debajo */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-top: 2rem; /* Espacio superior */
+}
+
+/* Secciones */
+.section h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+h2 {
+    font-size: 2rem; /* Tamaño original */
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #231709; /* Color original */
+}
+
+section.sobre-nosotros,
+section.productos,
+section.clientes,
+section.equipo {
+    padding: 2rem;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+    border: 2px solid #9A7B4f;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 96%; /* Ajustado para que las secciones ocupen el 96% del ancho */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+section.sobre-nosotros {
+    margin-top: 20px; /* Asegura que haya espacio suficiente entre el carrusel y la siguiente sección */
+}
+
+section.sobre-nosotros .content {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+section.sobre-nosotros .content .image-container {
+    max-width: 35%;
+}
+
+section.sobre-nosotros .content .image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+}
+
+section.sobre-nosotros .content .text-container {
+    max-width: 45%;
+    padding: 1rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+section.sobre-nosotros .content .text-container p {
+    font-size: 1.5rem;
+}
+
+/* Sección de Productos */
+section.productos .products-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+section.productos .product {
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+section.productos .product img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+}
+
+section.productos .product .product-info {
+    margin-top: 0.5rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+section.productos .product .product-info h3 {
+    font-size: 1.125rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+
+section.productos .product .product-info p {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
+
+section.productos .more-images {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+section.productos .more-images a {
+    background-color: #231709;
+    color: #fff;
+    padding: 0.625rem 1.25rem;
+    text-decoration: none;
+    border-radius: 0.3125rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+}
+
+section.productos .more-images a:hover {
+    background-color: #7a5c40;
+}
+
+/* Sección de Clientes */
+section.clientes .clients-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+section.clientes .client {
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    background-color: #f9f9f9;
+}
+
+section.clientes .client img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+section.clientes .client .client-info {
+    margin-top: 0.5rem;
+}
+
+section.clientes .client .client-info p {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+}
+
+/* Sección de Nuestro Equipo */
+section.equipo .team-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+section.equipo .team-member {
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    background-color: #f9f9f9;
+}
+
+section.equipo .team-member img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+section.equipo .team-member .member-info {
+    margin-top: 0.5rem;
+}
+
+section.equipo .team-member .member-info p {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+}
+
+/* Estilos del footer */
+.footer-content {
+    background-color: #231709;
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+}
+
+.footer-content p {
+    margin: 0.5rem 0;
+    font-size: 1.125rem;
+    font-weight: bold;
+}
+
+.footer-content .social-media {
+    margin: 1rem 0;
+}
+
+.footer-content .social-media a {
+    margin: 0 0.5rem;
+}
+
+.footer-content .social-media img {
+    width: 2rem;
+}
+
+.footer-content a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
+}
